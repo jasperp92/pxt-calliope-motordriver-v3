@@ -16,7 +16,7 @@ enum MotorDirection {
 * Blocks to control the onboard motors
 */
 //% color=#008272 weight=30 icon="\uf1b9"
-namespace motors_neu {
+namespace motors_v3 {
 
     /**
     * Controls one or two motors attached to the board.
