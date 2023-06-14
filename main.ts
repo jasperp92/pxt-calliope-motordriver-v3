@@ -18,6 +18,27 @@ enum MotorDirection {
 //% color=#008272 weight=30 icon="\uf1b9"
 namespace motors_v3 {
 
+
+    /**
+    * Controls one or two motors attached to the board.
+    */
+    //% blockId=block_break_motor block="motor %motor break"
+    //% weight=80
+    export function brakeMotor(motor: Motor) {
+        pins.digitalWritePin(DigitalPin.M_MODE, 1);
+        switch (motor) {
+            case Motor.A:
+                pins.analogWritePin(AnalogPin.M_AIN2, 0)
+                break;
+            case Motor.B:
+                pins.analogWritePin(AnalogPin.M_BIN2, 0)
+            case Motor.AB:
+                pins.analogWritePin(AnalogPin.P1, 0)
+                pins.analogWritePin(AnalogPin.P1, 0)
+                break;
+        }
+    }
+
     /**
     * Controls one or two motors attached to the board.
     */
@@ -47,10 +68,14 @@ namespace motors_v3 {
                 pins.analogWritePin(AnalogPin.M_BIN2, power)
             case Motor.AB:
                 if (direction === MotorDirection.Forward) {
+                    pins.digitalWritePin(DigitalPin.M_AIN1, 0)
+                    pins.digitalWritePin(DigitalPin.M_BIN1, 0)
                 } else {
+                    pins.digitalWritePin(DigitalPin.M_AIN1, 1)
+                    pins.digitalWritePin(DigitalPin.M_BIN1, 1)
                 };
-                pins.analogWritePin(AnalogPin.P1, power)
-                pins.analogWritePin(AnalogPin.P1, power)
+                pins.analogWritePin(AnalogPin.M_AIN2, power)
+                pins.analogWritePin(AnalogPin.M_BIN2, power)
                 break;
         }
     }
