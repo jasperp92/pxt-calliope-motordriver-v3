@@ -32,6 +32,7 @@ namespace motors_v3 {
                 break;
             case Motor.B:
                 pins.analogWritePin(AnalogPin.M_BIN2, 0)
+                break;
             case Motor.AB:
                 pins.analogWritePin(AnalogPin.P1, 0)
                 pins.analogWritePin(AnalogPin.P1, 0)
