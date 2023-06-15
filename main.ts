@@ -44,9 +44,9 @@ namespace motors_v3 {
     * Controls one or two motors attached to the board.
     */
     //% blockId=block_control_motor block="motor %motor |moving %direction |at %duty_percent \\%"
-    //% duty_percent.shadow="speedPicker"
     //% weight=80
     //% duty_percent.defl=100
+    //% duty_percent.min=0 duty_percent.max=100 duty_percent.defl=100
     //% direction.defl = MotorDirection.Forward
     export function dualMotorPower(motor: Motor, direction: MotorDirection, duty_percent: number) {
         pins.digitalWritePin(DigitalPin.M_MODE, 1);
