@@ -67,6 +67,7 @@ namespace motors_v3 {
                     pins.digitalWritePin(DigitalPin.M_BIN1, 1)
                 };
                 pins.analogWritePin(AnalogPin.M_BIN2, power)
+                break;
             case Motor.AB:
                 if (direction === MotorDirection.Forward) {
                     pins.digitalWritePin(DigitalPin.M_AIN1, 0)
