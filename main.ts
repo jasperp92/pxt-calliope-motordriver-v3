@@ -45,7 +45,6 @@ namespace motors_v3 {
     */
     //% blockId=block_control_motor block="motor %motor |moving %direction |at %duty_percent \\%"
     //% weight=80
-    //% duty_percent.defl=100
     //% duty_percent.min=0 duty_percent.max=100 duty_percent.defl=100
     //% direction.defl = MotorDirection.Forward
     export function dualMotorPower(motor: Motor, direction: MotorDirection, duty_percent: number) {
